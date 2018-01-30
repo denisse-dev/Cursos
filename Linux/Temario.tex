@@ -1,0 +1,240 @@
+\documentclass[11pt, letter-paper]{article}
+\usepackage[inner=1.5cm,outer=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[utf8]{inputenc}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{Programación en Haskell} }
+\rhead{ \fancyplain{}{Septiembre 2016} }
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes 
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+\begin{document}
+\begin{center}
+{\Large \textsc{Programación en Haskell}}
+\end{center}
+\begin{center}
+Septiembre, 2016
+\end{center}
+
+\begin{center}
+\rule{6in}{0.4pt}
+\begin{minipage}[t]{.75\textwidth}
+\begin{tabular}{llcccll}
+\textbf{Instructora:} & Andrea Gómez & & & &
+\textbf{Email:} &  \href{mailto:hi@daedra.ml}{hi@daedra.ml}
+\end{tabular}
+\end{minipage}
+\rule{6in}{0.4pt}
+\end{center}
+\vspace{.5cm}
+\setlength{\unitlength}{1in}
+\renewcommand{\arraystretch}{2}
+
+\noindent\textbf{Temario:}
+\begin{enumerate}
+    \item Introducción a Haskell
+    \begin{enumerate}
+    \item Lenguajes de programación
+        \begin{enumerate}
+            \item Funcionales e imperativos.
+            \item Sistema de tipos.
+        \end{enumerate}
+    \item Haskell
+        \begin{enumerate}
+            \item ¿Qué es Haskell?
+            \item ¿Por qué usar Haskell?
+            \item ¿Quién usa Haskell?
+            \item Lo necesario para programar en Haskell.
+        \end{enumerate}
+    \end{enumerate}
+    \item Usando GHCI
+    \begin{enumerate}
+        \item Operadores
+        \begin{enumerate}
+            \item Aritméticos.
+            \item Álgebra Booleana.
+        \end{enumerate}
+        \item Funciones
+        \begin{enumerate}
+            \item Tipos de funciones
+            \begin{enumerate}
+                \item Prefijas
+                \item Infíjas
+            \end{enumerate}
+            \item Funciones predefinidas
+            \item Funciones en tiempo de ejecución
+            \item Funciones desde un archivo
+        \end{enumerate}
+    \end{enumerate}
+    \item Listas
+    \begin{enumerate}
+        \item Introducción a las listas
+        \begin{enumerate}
+            \item Definición de lista
+            \item Creando listas
+            \item Operaciones con listas
+            \item Listas anidadas
+            \item Funciones básicas en listas
+        \end{enumerate}
+        \item Rangos texanos
+        \begin{enumerate}
+            \item Utilidad de los rangos texanos
+            \item Orden de los rangos
+            \item Listas infinitas
+        \end{enumerate}
+        \item Listas intencionales
+        \begin{enumerate}
+            \item Similitud con conjuntos definidos de forma intensiva
+            \item Dentro de funciones
+            \item Listas intencionales con múltiples predicados
+            \item Funciones con múltiples listas intencionales
+            \item Listas intencionales y rangos texanos
+        \end{enumerate}
+    \end{enumerate}
+    \item Tuplas
+    \begin{enumerate}
+        \item Introducción a las tuplas
+        \begin{enumerate}
+            \item Definición de tupla
+            \item Diferencia entre tupla y lista
+            \item Ventajas de tuplas frente a listas
+        \end{enumerate}
+        \item Trabajando con tuplas
+        \begin{enumerate}
+            \item Tipos de tupla
+            \item Listas unitarias, tuplas unitarias
+            \item Comparación de tuplas
+            \item De tuplas a listas
+        \end{enumerate}
+    \end{enumerate}
+    \item Tipos y clases de tipos
+    \begin{enumerate}
+        \item Introducción a tipos
+        \begin{enumerate}
+            \item Inferencia de tipos
+            \item Examinando tipos en GHCI
+            \item Tipos de funciones
+            \item Tipos comunes
+            \item Tipos de tuplas
+        \end{enumerate}
+        \item Variables de tipo
+        \begin{enumerate}
+            \item Tipos y variables de tipo
+            \item Funciones polimórficas
+        \end{enumerate}
+        \item Clases de tipo
+        \begin{enumerate}
+            \item Introducción a las clases de tipos
+            \item Diferencia de clases entre lenguajes de programación funcionales y orientados a objetos
+            \item Restricción de clase
+            \item Clases de tipos básicas
+            \begin{enumerate}
+                \item Eq
+                \item Ord
+                \item Show
+                \item Read
+                \item Enum
+                \item Bounded
+                \item Num
+                \item Integral
+                \item Floating
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+    \item Sintaxis de funciones
+    \begin{enumerate}
+        \item Correspondencia de patrones
+        \begin{enumerate}
+            \item Introducción a la correspondencia de patrones
+            \item Tipos de datos válidos
+            \item Ventaja de correspondencia de patrones frente a árboles if then else
+            \item Recursión básica
+        \item Correspondencia de patrones y otros tipos de datos
+            \item Correspondencia de patrones y tuplas
+            \item Correspondencia de patrones y listas intencionales
+            \item Implementando correspondencia de patrones
+        \end{enumerate}
+        \item Guardas
+        \begin{enumerate}
+            \item Introducción a las guardas
+            \item Aplicación de las guardas
+            \item otherwise.otherwise
+            \item Guardas y funciones que reciben parámetros
+            \item Ligando valores a variables para usarse en expresiones
+            \item Múltiples "where"
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\vskip.15in
+\noindent \textbf{Instalando lo necesario en Arch Linux:} Recomiendo encarecidamente llevar instalados los siguientes paquetes antes de comenzar el curso para poder hacer un uso eficiente del tiempo. Si no usan Arch Linux, bastará con adecuar los comandos al gestor de paquetes usado por su distribución preferida:
+
+\begin{lstlisting}
+  $ sudo pacman -S ghc
+\end{lstlisting}
+
+Si bien GHC es todo lo que necesitaremos pues el curso es introductorio, recomiendo instalar los siguientes paquetes en adición a GHC para quien desee adentrarse al hermoso mundo de Haskell.
+
+\begin{lstlisting}
+  $ sudo pacman -S cabal-install haskell-haddock-api haskell-haddock-library happy alex emacs 
+\end{lstlisting}
+
+Recomiendo también los siguientes paquetes para Emacs pues enriquecerán el ya increíble editor de texto Emacs. Solo requieren tener habilitado el repositorio Melpa para instalarlos dentro de Emacs y posteriormente, editar el archivo .emacs para inicializarlos.
+
+\begin{lstlisting}
+    M-x package-install RET haskell-mode
+    M-x package-install RET auto-complete
+    M-x package-install RET ac-haskell-process
+\end{lstlisting}
+
+
+\end{document} 
