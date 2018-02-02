@@ -1,4 +1,4 @@
-\documentclass[11pt, letter-paper]{article}
+\documentclass[12pt, letter-paper]{article}
 \usepackage[inner=1.5cm,outer=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 \pagestyle{empty}
 \usepackage{graphicx}
@@ -14,8 +14,8 @@
 
 \pagestyle{fancyplain}
 \fancyhf{}
-\lhead{ \fancyplain{}{Programación en Haskell} }
-\rhead{ \fancyplain{}{Septiembre 2016} }
+\lhead{ \fancyplain{}{Linux} }
+\rhead{ \fancyplain{}{Marzo 2018} }
 \fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
 \thispagestyle{plain}
 
@@ -28,213 +28,208 @@
 \usepackage{fancyvrb}
 \usepackage{acronym}
 \usepackage{amsthm}
-\VerbatimFootnotes 
+\renewcommand{\familydefault}{\sfdefault}
 
 \definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
 \definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
 \definecolor{lightlightgray}{gray}{0.93}
-
-
+\VerbatimFootnotes
 
 \lstset{
-%language=bash,                          % Code langugage
-basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
-keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
-commentstyle=\color{gray},              % Comments font
-numbers=left,                           % Line nums position
-numberstyle=\tiny,                      % Line-numbers fonts
-stepnumber=1,                           % Step between two line-numbers
-numbersep=5pt,                          % How far are line-numbers from code
-backgroundcolor=\color{lightlightgray}, % Choose background color
-frame=none,                             % A frame around the code
-tabsize=2,                              % Default tab size
-captionpos=t,                           % Caption-position = bottom
-breaklines=true,                        % Automatic line breaking?
-breakatwhitespace=false,                % Automatic breaks only at whitespace?
-showspaces=false,                       % Dont make spaces visible
-showtabs=false,                         % Dont make tabls visible
-columns=flexible,                       % Column format
-morekeywords={__global__, __device__},  % CUDA specific keywords
+  % language=bash,                        % Code langugage
+  basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+  keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+  commentstyle=\color{gray},              % Comments font
+  numbers=left,                           % Line nums position
+  numberstyle=\tiny,                      % Line-numbers fonts
+  stepnumber=1,                           % Step between two line-numbers
+  numbersep=5pt,                          % How far are line-numbers from code
+  backgroundcolor=\color{lightlightgray}, % Choose background color
+  frame=none,                             % A frame around the code
+  tabsize=2,                              % Default tab size
+  captionpos=t,                           % Caption-position = bottom
+  breaklines=true,                        % Automatic line breaking?
+  breakatwhitespace=false,                % Automatic breaks only at whitespace?
+  showspaces=false,                       % Dont make spaces visible
+  showtabs=false,                         % Dont make tabls visible
+  columns=flexible,                       % Column format
+  morekeywords={__global__, __device__},  % CUDA specific keywords
 }
 
 \begin{document}
 \begin{center}
-{\Large \textsc{Programación en Haskell}}
+  {\Large \textsc{Linux}}
 \end{center}
 \begin{center}
-Septiembre, 2016
+  Para web developers
 \end{center}
 
 \begin{center}
-\rule{6in}{0.4pt}
-\begin{minipage}[t]{.75\textwidth}
-\begin{tabular}{llcccll}
-\textbf{Instructora:} & Andrea Gómez & & & &
-\textbf{Email:} &  \href{mailto:hi@daedra.ml}{hi@daedra.ml}
-\end{tabular}
-\end{minipage}
-\rule{6in}{0.4pt}
+  \rule{6in}{0.4pt}
+  \begin{minipage}[t]{.75\textwidth}
+    \begin{tabular}{llcccll}
+      \textbf{Instructora:} & Andrea Gómez & & & &
+                                                   \textbf{Fecha:} &  Marzo, 2018
+    \end{tabular}
+  \end{minipage}
+  \rule{6in}{0.4pt}
 \end{center}
 \vspace{.5cm}
 \setlength{\unitlength}{1in}
 \renewcommand{\arraystretch}{2}
 
-\noindent\textbf{Temario:}
+% \noindent
+\textbf{Temario:}
 \begin{enumerate}
-    \item Introducción a Haskell
+\item Introducción a Linux
+  \begin{enumerate}
+  \item ¿Qué es un sistema operativo?
     \begin{enumerate}
-    \item Lenguajes de programación
-        \begin{enumerate}
-            \item Funcionales e imperativos.
-            \item Sistema de tipos.
-        \end{enumerate}
-    \item Haskell
-        \begin{enumerate}
-            \item ¿Qué es Haskell?
-            \item ¿Por qué usar Haskell?
-            \item ¿Quién usa Haskell?
-            \item Lo necesario para programar en Haskell.
-        \end{enumerate}
+    \item Windows
+    \item POSIX
     \end{enumerate}
-    \item Usando GHCI
+  \item Linux \& UNIX
     \begin{enumerate}
-        \item Operadores
-        \begin{enumerate}
-            \item Aritméticos.
-            \item Álgebra Booleana.
-        \end{enumerate}
-        \item Funciones
-        \begin{enumerate}
-            \item Tipos de funciones
-            \begin{enumerate}
-                \item Prefijas
-                \item Infíjas
-            \end{enumerate}
-            \item Funciones predefinidas
-            \item Funciones en tiempo de ejecución
-            \item Funciones desde un archivo
-        \end{enumerate}
+    \item ¿Qué es UNIX?
+    \item ¿Qué es Linux?
+    \item Diferencias entre Linux y UNIX
     \end{enumerate}
-    \item Listas
+  \item Usando Linux
     \begin{enumerate}
-        \item Introducción a las listas
-        \begin{enumerate}
-            \item Definición de lista
-            \item Creando listas
-            \item Operaciones con listas
-            \item Listas anidadas
-            \item Funciones básicas en listas
-        \end{enumerate}
-        \item Rangos texanos
-        \begin{enumerate}
-            \item Utilidad de los rangos texanos
-            \item Orden de los rangos
-            \item Listas infinitas
-        \end{enumerate}
-        \item Listas intencionales
-        \begin{enumerate}
-            \item Similitud con conjuntos definidos de forma intensiva
-            \item Dentro de funciones
-            \item Listas intencionales con múltiples predicados
-            \item Funciones con múltiples listas intencionales
-            \item Listas intencionales y rangos texanos
-        \end{enumerate}
+    \item ¿Por qué usar Linux?
+    \item ¿Quién usa Linux?
     \end{enumerate}
-    \item Tuplas
+  \end{enumerate}
+  
+\item Distribuciones de Linux
+  \begin{enumerate}
+  \item ¿Qué es una distribución de Linux?
     \begin{enumerate}
-        \item Introducción a las tuplas
-        \begin{enumerate}
-            \item Definición de tupla
-            \item Diferencia entre tupla y lista
-            \item Ventajas de tuplas frente a listas
-        \end{enumerate}
-        \item Trabajando con tuplas
-        \begin{enumerate}
-            \item Tipos de tupla
-            \item Listas unitarias, tuplas unitarias
-            \item Comparación de tuplas
-            \item De tuplas a listas
-        \end{enumerate}
+    \item Similitudes entre distribuciones de Linux
+    \item Diferencias entre distribuciones de Linux
     \end{enumerate}
-    \item Tipos y clases de tipos
+  \item Escogiendo una distribución de Linux
     \begin{enumerate}
-        \item Introducción a tipos
-        \begin{enumerate}
-            \item Inferencia de tipos
-            \item Examinando tipos en GHCI
-            \item Tipos de funciones
-            \item Tipos comunes
-            \item Tipos de tuplas
-        \end{enumerate}
-        \item Variables de tipo
-        \begin{enumerate}
-            \item Tipos y variables de tipo
-            \item Funciones polimórficas
-        \end{enumerate}
-        \item Clases de tipo
-        \begin{enumerate}
-            \item Introducción a las clases de tipos
-            \item Diferencia de clases entre lenguajes de programación funcionales y orientados a objetos
-            \item Restricción de clase
-            \item Clases de tipos básicas
-            \begin{enumerate}
-                \item Eq
-                \item Ord
-                \item Show
-                \item Read
-                \item Enum
-                \item Bounded
-                \item Num
-                \item Integral
-                \item Floating
-            \end{enumerate}
-        \end{enumerate}
+    \item Distribuciones más usadas para uso personal
+      \begin{enumerate}
+      \item Debian
+      \item Ubuntu, Linux Mint, elementaryOS
+      \item Fedora
+      \item Arch Linux, Gentoo
+      \end{enumerate}
+    \item Distribuciones más usadas en servidores
+      \begin{enumerate}
+      \item Debian, Ubuntu
+      \item RHEL
+      \item CentOS, Fedora
+      \end{enumerate}
     \end{enumerate}
-    \item Sintaxis de funciones
+  \end{enumerate}
+  
+\item Instalando Linux
+  \begin{enumerate}
+  \item Planeando la instalación
     \begin{enumerate}
-        \item Correspondencia de patrones
-        \begin{enumerate}
-            \item Introducción a la correspondencia de patrones
-            \item Tipos de datos válidos
-            \item Ventaja de correspondencia de patrones frente a árboles if then else
-            \item Recursión básica
-        \item Correspondencia de patrones y otros tipos de datos
-            \item Correspondencia de patrones y tuplas
-            \item Correspondencia de patrones y listas intencionales
-            \item Implementando correspondencia de patrones
-        \end{enumerate}
-        \item Guardas
-        \begin{enumerate}
-            \item Introducción a las guardas
-            \item Aplicación de las guardas
-            \item otherwise.otherwise
-            \item Guardas y funciones que reciben parámetros
-            \item Ligando valores a variables para usarse en expresiones
-            \item Múltiples "where"
-        \end{enumerate}
+    \item Respaldando información importante
+    \item Instalando más de un sistema operativo
+    \item Particionar disco duro
+    \item Conociendo la configuración del equipo
+      \begin{enumerate}
+      \item Requisitos de hardware
+      \item Firmwares UEFI y BIOS
+      \end{enumerate}
     \end{enumerate}
+  \item Preparando un medio de instalación
+    \begin{enumerate}
+    \item Descargando Linux
+    \item Creando un medio de instalación
+    \end{enumerate}
+  \item El proceso de instalación
+    \begin{enumerate}
+    \item Configurando la hora y región geográfica del sistema
+    \item Definiendo idioma y configuración de teclado
+    \item Creando particiones de disco
+      \begin{enumerate}
+      \item Tablas de particiones GPT y MBR
+      \item Sistemas de archivos ext4, NTFS y HFS
+      \item Partición compartida con otro sistema operativo
+      \end{enumerate}
+    \item Usuarios
+      \begin{enumerate}
+      \item Creando usuarios
+      \item Recomendaciones para hacer contraseñas seguras
+      \item Usuario Root
+      \end{enumerate}
+    \item Instalando el gestor de arranque GRUB
+      \begin{enumerate}
+      \item Creando entradas para otros sistemas operativos en GRUB
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+  
+\item Iniciando el sistema por 1era vez
+  \begin{enumerate}
+  \item El gestor de arranque
+  \item El ``entorno'' Linux
+  \item Iniciando sesión con nuestro usuario
+    \begin{enumerate}
+    \item La carpeta ``home''
+    \end{enumerate}
+  \end{enumerate}
+  
+\item La terminal
+  \begin{enumerate}
+  \item ¿Qué es la terminal y para qué sirve?
+  \item Iniciando la terminal
+  \end{enumerate}
+  
+\item La Shell
+  \begin{enumerate}
+  \item La Shell y su utilidad
+  \item Las Shell más comunes
+    \begin{enumerate}
+    \item Sh
+    \item Bash
+    \item Zsh
+    \end{enumerate}
+  \item Conociendo la simbología de la Shell
+  \end{enumerate}
+\item Trabajando con la Shell
+  \begin{enumerate}
+  \item Archivos y directorios
+    \begin{enumerate}
+    \item Listando archivos y carpetas
+    \item Cambiando de directorios
+    \item Creando archivos y carpetas
+    \item Copiando archivos y carpetas
+    \item Moviendo archivos y carpetas
+    \item Eliminando archivos y carpetas
+    \item Concatenando archivos y cadenas
+    \item Imprimiendo a un archivo desde la terminal
+    \end{enumerate}
+  \item Editores de texto más comunes en Linux
+    \begin{enumerate}
+    \item Nano
+    \item Vim
+    \item Emacs
+    \end{enumerate}
+  \item Usuarios y grupos
+    \begin{enumerate}
+    \item Usuarios
+      \begin{enumerate}
+      \item Creando y elimiando usuarios
+      \item Permisos de usuarios
+      \end{enumerate}
+    \item Grupos y su utilidad
+      \begin{enumerate}
+      \item Creando un grupo
+      \item Añadiendo y eliminando usuarios de un grupo
+      \item Eliminando un grupo
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+\item hi
 \end{enumerate}
 
 \vskip.15in
-\noindent \textbf{Instalando lo necesario en Arch Linux:} Recomiendo encarecidamente llevar instalados los siguientes paquetes antes de comenzar el curso para poder hacer un uso eficiente del tiempo. Si no usan Arch Linux, bastará con adecuar los comandos al gestor de paquetes usado por su distribución preferida:
-
-\begin{lstlisting}
-  $ sudo pacman -S ghc
-\end{lstlisting}
-
-Si bien GHC es todo lo que necesitaremos pues el curso es introductorio, recomiendo instalar los siguientes paquetes en adición a GHC para quien desee adentrarse al hermoso mundo de Haskell.
-
-\begin{lstlisting}
-  $ sudo pacman -S cabal-install haskell-haddock-api haskell-haddock-library happy alex emacs 
-\end{lstlisting}
-
-Recomiendo también los siguientes paquetes para Emacs pues enriquecerán el ya increíble editor de texto Emacs. Solo requieren tener habilitado el repositorio Melpa para instalarlos dentro de Emacs y posteriormente, editar el archivo .emacs para inicializarlos.
-
-\begin{lstlisting}
-    M-x package-install RET haskell-mode
-    M-x package-install RET auto-complete
-    M-x package-install RET ac-haskell-process
-\end{lstlisting}
-
-
 \end{document} 
